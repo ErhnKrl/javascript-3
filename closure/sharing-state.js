@@ -54,18 +54,18 @@ function pureFunctions() {
 
   const str1 = '-';
 
-  console.assert(concatPigs(str1) === null, 'assert 1');
-  console.assert(concatPigs(str1) === null, 'assert 2');
-  console.assert(concatParam(str1, " rock!") === null, 'assert 3');
-  console.assert(concatParam(str1, " rock!") === null, 'assert 4');
+  console.assert(concatPigs(str1) === "- pigs", 'assert 1');
+  console.assert(concatPigs(str1) === "- pigs", 'assert 2');
+  console.assert(concatParam(str1, " rock!") === "- rock!", 'assert 3');
+  console.assert(concatParam(str1, " rock!") === "- rock!", 'assert 4');
 
 
   const str2 = "hoy";
 
-  console.assert(concatPigs(str2) === null, 'assert 5');
-  console.assert(concatPigs(str2) === null, 'assert 6');
-  console.assert(concatParam(str2, " cheese!") === null, 'assert 7');
-  console.assert(concatParam(str2, " cheese!") === null, 'assert 8');
+  console.assert(concatPigs(str2) === "hoy pigs", 'assert 5');
+  console.assert(concatPigs(str2) === "hoy pigs", 'assert 6');
+  console.assert(concatParam(str2, "cheese!") === "hoycheese!", 'assert 7');
+  console.assert(concatParam(str2, "cheese!") === "hoycheese!", 'assert 8');
 }
 pureFunctions.display = true;
 sharingState.push(pureFunctions);

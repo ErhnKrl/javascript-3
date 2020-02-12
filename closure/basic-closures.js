@@ -35,21 +35,21 @@ function exercise1() { // replace all of the null's to pass the assertions
 
   const one = closeAValue(1);
   const oneReturns = one();
-  console.assert(oneReturns === null, "asserting one's return value");
+  console.assert(oneReturns === 1, "asserting one's return value");
 
   const two = closeAValue(2);
   const twoReturns = two();
-  console.assert(twoReturns === null, "asserting two's return value");
+  console.assert(twoReturns === 2, "asserting two's return value");
 
-  const three = null;
-  const threeReturns = null;
+  const three = closeAValue(4);
+  const threeReturns = three();
   console.assert(threeReturns === 4, "asserting three's return value");
 
 
-  const sum = one + two + three; // fix this line to pass the assert
+  const sum = one() + two() + three(); // fix this line to pass the assert
   console.assert(sum === 7, "summing closed values");
 
-  const product = null; // fix this line to pass the assert
+  const product = two() * three() * two(); // fix this line to pass the assert
   console.assert(product === 16, "create the value 16 using your closed functions");
 
 }
@@ -69,16 +69,16 @@ function exercise2() { // replace all of the null's to pass the assertions
 
   const result1 = closure1(8);
   const result2 = closure2(8);
-  console.assert(result1 === null, "result 1")
-  console.assert(result2 === null, "result 2")
+  console.assert(result1 === 11, "result 1")
+  console.assert(result2 === "83", "result 2")
 
   const result3 = closure1(true);
   const result4 = closure2(true);
-  console.assert(result3 === null, "result 3")
-  console.assert(result4 === null, "result 4")
+  console.assert(result3 === 4, "result 3")
+  console.assert(result4 === "true3", "result 4")
 
-  const result5 = closure1(null);
-  const result6 = closure2(null);
+  const result5 = closure1("1");
+  const result6 = closure2(1);
   console.assert(result5 === result6, "results 5 & 6");
 }
 exercise2.display = true;
@@ -97,25 +97,25 @@ function exercise3() { // replace "null"s to pass the asserts
   const closure1 = closeIt("a");
 
   const result1 = closure1("c");
-  console.assert(result1 === null, "result 1");
+  console.assert(result1 === "abcd", "result 1");
 
   const result2 = closure1("x");
-  console.assert(result2 === null, "result 2");
+  console.assert(result2 === "abxd", "result 2");
 
 
   const closure2 = closeIt("iii");
 
   const result3 = closure2("2");
-  console.assert(result3 === null, "result 3");
+  console.assert(result3 === "iiib2d", "result 3");
 
   const result4 = closure2("--");
-  console.assert(result4 === null, "result 4");
+  console.assert(result4 === "iiib--d", "result 4");
 
 
   const result5 = closure1(8);
-  console.assert(result5 === null, "result 5");
+  console.assert(result5 === "ab8d", "result 5");
 
-  const result6 = closure2(null)
+  const result6 = closure2(" ")
   console.assert(result6 === "iiib d", "result 6");
 }
 exercise3.display = true;
@@ -132,25 +132,25 @@ function exercise4() {// replace the "null"s to pass the asserts
   const closure_4_5 = closeIt(4, 5);
 
   const result1 = closure_4_5(200);
-  console.assert(result1 === null, "result 1");
+  console.assert(result1 === 205, "result 1");
 
   const result2 = closure_4_5(-3);
-  console.assert(result2 === null, "result 2");
+  console.assert(result2 === 2, "result 2");
 
 
   const closure_false_true = closeIt(false, true);
 
   const result3 = closure_false_true(200);
-  console.assert(result3 === null, "result 3");
+  console.assert(result3 === 201, "result 3");
 
   const result4 = closure_false_true(-3);
-  console.assert(result4 === null, "result 4");
+  console.assert(result4 === -2, "result 4");
 
 
   const result5 = closure_4_5(1);
-  console.assert(result5 === null, "result 5");
+  console.assert(result5 === 6, "result 5");
 
-  const result6 = closure_4_5(null) + closure_false_true(null);
+  const result6 = closure_4_5(-3) + closure_false_true(3);
   console.assert(result6 === 6, "result 6");
 }
 exercise4.display = true;

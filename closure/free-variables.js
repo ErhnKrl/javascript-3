@@ -70,7 +70,7 @@ function exercise1() {
   // write the function and replace the null's to pass the asserts
 
   function usesGlobalVariable(param) {
-    // write me!
+    return param+globalVariable+"local";
   }
 
   let globalVariable = "global";
@@ -82,13 +82,13 @@ function exercise1() {
   console.assert(result2 === "undefinedgloballocal", "assert 2");
 
   globalVariable = usesGlobalVariable("spoon");
-  console.assert(globalVariable === null, "assert 3");
+  console.assert(globalVariable === "spoongloballocallocal", "assert 3");
 
-  const result3 = usesGlobalVariable(null);
+  const result3 = usesGlobalVariable("spoon");
   console.assert(result3 === "spoongloballocallocal", "assert 4");
 
   globalVariable = usesGlobalVariable("spoon");
-  console.assert(globalVariable === null, "assert 5");
+  console.assert(globalVariable === "spoongloballocal", "assert 5");
 }
 exercise1.display = true;
 freeVariables.push(exercise1);
